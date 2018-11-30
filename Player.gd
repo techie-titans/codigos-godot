@@ -13,11 +13,17 @@ func _physics_process(delta):
 	# Movement
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
+		# Inverter o eixo caso seja um sprite simples ou pré animado
 		$Sprite.flip_h = false
+		# Utilizar este outro método de inversão caso seja um sprite com várias partes montadas em uma animação estilo cutout
+		$Sprite.set_scale(Vector2(1,1))
 		$Sprite.play("run")
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -SPEED
+		# Inverter o eixo caso seja um sprite simples ou pré animado
 		$Sprite.flip_h = true
+		# Utilizar este outro método de inversão caso seja um sprite com várias partes montadas em uma animação estilo cutout
+		$Sprite.set_scale(Vector2(-1,1))
 		$Sprite.play("run")
 	else:
 		motion.x = 0
