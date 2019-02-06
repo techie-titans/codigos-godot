@@ -8,4 +8,7 @@ func _physics_process(delta):
 	globalMousePosition = get_global_mouse_position()
 	
 	# Fazer o braço apontar para o mouse
-  $Arm.rotation = localMousePosition.angle()
+  	$Arm.rotation = localMousePosition.angle()
+
+	# Correção quando o mouse está pra tras do braço
+	
