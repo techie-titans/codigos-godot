@@ -1,3 +1,5 @@
+# Script de movimentação básico, aplicado sobre estrutura da FIGURA_01
+
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
