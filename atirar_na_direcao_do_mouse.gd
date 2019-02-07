@@ -1,6 +1,7 @@
 # Um objeto SpawnBullets foi criado no lugar onde as balas devem ser criadas.
 # Este objeto é somente um Position2D filho do braço ou do personagem.
 
+const BULLET_SPEED = 5
 var bullet = preload("res://scenes/Bullet.tscn")
 
 # func _physics_process(delta):
