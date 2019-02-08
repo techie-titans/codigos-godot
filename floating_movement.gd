@@ -1,4 +1,5 @@
 # Script que faz um inimigo 'voar' de forma natural e bonita
+# de um limite até outro da borda da tela.
 
 extends KinematicBody2D
 
