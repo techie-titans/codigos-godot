@@ -1,3 +1,5 @@
+# Script que faz um inimigo 'voar' de forma natural e bonita
+
 extends KinematicBody2D
 
 const V_SPEED = 5
