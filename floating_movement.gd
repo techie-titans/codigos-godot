@@ -11,38 +11,35 @@ var screensize
 var direction = -1
 var chave = false
 var motion = Vector2()
-onready var Player = get_node("/root/Environment/Player")
 
 func _ready():
 	screensize = get_viewport_rect().size
 
-func _process(delta):
-		pass
-
 func _physics_process(delta):
-	
+	# Checa a direção que ele deve ir
 	directionsController()
 	
-	# Up/Down controller
+	# Up/Down movement
 	if position.y > UP_LIMIT:
 		motion.y -= V_SPEED/2
 	else:
 		motion.y += V_SPEED/2
 	
-	# Left/Rigth controller
+	# Left/Rigth movement
 	if direction == 1: # Rigth
 		motion.x -= H_SPEED
 		$Sprite.set_flip_h(true)
-		$EnemyGun.set_flip_h(true)
 	elif direction == -1: # Left
 		motion.x += H_SPEED
 		$Sprite.set_flip_h(false)
-		$EnemyGun.set_flip_h(false)
 	
+	# Limitar a velocidade
 	motion.x = clamp(motion.x, -MAX_SPEED, MAX_SPEED)
+	
 	motion = move_and_slide(motion)
 	
 func directionsController():
+	# Altera a direção dele caso atinja os limites estipulados
 	if position.x > BORDER_LIMIT and chave == false:
 		direction = 1
 	elif position.x < (screensize.x - BORDER_LIMIT):
